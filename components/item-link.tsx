@@ -10,9 +10,9 @@ const IconLink = ({link}: {link: ProfileLink}) => {
     )
 }
 
-export const ItemLink = ({link}: {link: ProfileLink}) => {
+export const ItemLink = ({link, className, style}: {link: ProfileLink, className?: string, style?: React.CSSProperties}) => {
     return (
-        <div>
+        <div className={className} style={style}>
             <Link href={link.url} className="">
                 {link.icon ? <IconLink link={link}/> : link.title}
             </Link>
