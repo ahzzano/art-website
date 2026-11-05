@@ -13,7 +13,7 @@ const IconLink = ({link}: {link: ProfileLink}) => {
 export const ItemLink = ({link, className, style}: {link: ProfileLink, className?: string, style?: React.CSSProperties}) => {
     return (
         <div className={className} style={style}>
-            <Link href={link.url} className="">
+            <Link href={link.url} className="block p-1.5">
                 {link.icon ? <IconLink link={link}/> : link.title}
             </Link>
         </div>
