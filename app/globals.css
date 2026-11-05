@@ -40,8 +40,8 @@
 
 /* Talia theme: colors sampled from the Edgerunners 2 character sheet. */
 :root[data-theme="talia"] {
-  --background: #00000f;
-  --background-end: #37050c;
+  --background: oklch(21.2% 0.019 322.12); /* mauve-900 */
+  --background-end: #29040d;
   --foreground: #d7dbde;
   --surface: #21212a;
   --muted: #8f8ca4;
