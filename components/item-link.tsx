@@ -4,7 +4,7 @@ import Link from "next/link"
 // Assume that link has an icon
 const IconLink = ({link}: {link: ProfileLink}) => {
     return (
-        <svg role="img" viewBox="0 0 24 24" className="size-8" fill="currentColor" aria-hidden="true">
+        <svg role="img" viewBox="0 0 24 24" className="size-8 hover:scale-115 transition-transform hover:fill-accent" fill="currentColor" aria-hidden="true">
             <path d={link.icon?.path}/>
         </svg>
     )
