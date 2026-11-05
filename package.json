@@ -12,7 +12,8 @@
     "axios": "^1.21.0",
     "next": "16.4.5",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "simple-icons": "^16.36.0"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
