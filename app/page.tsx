@@ -17,6 +17,7 @@ export default function Home() {
               <div className="flex flex-col items-center w-full motion-safe:animate-fade-in motion-safe:[animation-delay:600ms] ">
                 <span className="font-cantarell">Follow me on my socials :{">"}{">"} </span>
                 <div className="flex flex-wrap justify-center gap-4 py-2">
+                <div className="flex flex-wrap justify-center gap-4 py-2">
                   {
                     links.map((link, i) => 
                       <ItemLink 
