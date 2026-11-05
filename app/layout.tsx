@@ -27,6 +27,7 @@ const cantarell = Cantarell({
 export const metadata: Metadata = {
   title: site.title,
   description: site.description,
+  robots: "noai, noimageai",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
