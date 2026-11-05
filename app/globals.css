@@ -8,9 +8,28 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-red: var(--red);
+  --color-crimson: var(--crimson);
+  --color-cyan: var(--cyan);
+  --color-violet: var(--violet);
+  --color-yellow: var(--yellow);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-fredoka: var(--font-fredoka-sans);
+  --font-cantarell: var(--font-cantarell-sans);
+  --animate-fade-in: fade-in 0.8s ease-out both;
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
 }
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -19,8 +38,28 @@
   }
 }
 
+/* Talia theme: colors sampled from the Edgerunners 2 character sheet. */
+:root[data-theme="talia"] {
+  --background: #00000f;
+  --background-end: #37050c;
+  --foreground: #d7dbde;
+  --surface: #21212a;
+  --muted: #8f8ca4;
+  --accent: #e16174;
+  --accent-soft: #f3b5b4;
+  --red: #ea4b4e;
+  --crimson: #932448;
+  --cyan: #7dd7e3;
+  --violet: #7c47cd;
+  --yellow: #fced4f;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+:root[data-theme="talia"] body {
+  background: linear-gradient(to bottom, var(--background), var(--background-end)) fixed;
 }
