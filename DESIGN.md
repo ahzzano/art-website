@@ -80,6 +80,7 @@ Optional notes about the piece.
 - **`/`** — profile header (from `site.ts`) + list of links.
 - **`/gallery`** — grid of square tiles using `next/image` with `fill` + `object-cover`.
 - **Lightbox** — clicking a tile opens a native `<dialog>` (client component) showing the full image (`object-contain`), title, date, rendered body, and per-piece links. No URL change.
+- **Responsive** — all pages are built mobile-first with Tailwind breakpoint prefixes (base = phone, `sm:` and up = desktop).
 - **`LinkItem`** — single shared component (icon + title + description) used for both site links and per-piece links.
 
 ## Quick-Add Script
