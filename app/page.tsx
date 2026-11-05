@@ -4,13 +4,13 @@ import { site } from "@/content/site";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-mauve-800">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-center py-32 px-16 bg-white dark:bg-mauve-800">
-        <div className="bg-pink-200 p-6 rounded-xl text-gray-900 w-3/5 motion-safe:animate-fade-in">
+    <div className="flex flex-col flex-1 items-center justify-center font-sans">
+      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-center py-32 px-16">
+        <div className="bg-accent-soft p-6 rounded-xl text-gray-900 w-3/5 motion-safe:animate-fade-in shadow-2xl">
             <div className="w-full flex flex-col gap-5">
-              <h1 className="font-fredoka text-2xl motion-safe:animate-fade-in motion-safe:[animation-delay:200ms]">{site.name}</h1>
+              <h1 className="font-fredoka font-semibold text-3xl motion-safe:animate-fade-in motion-safe:[animation-delay:200ms]">{site.name}</h1>
               <div className="motion-safe:animate-fade-in motion-safe:[animation-delay:400ms]">
-                <p className="text-gray-900">
+                <p className="">
                   {site.bio}
                 </p>
               </div>
