@@ -113,10 +113,34 @@ The script is a `.ts` file run directly by Node 26 (native type stripping), with
 - Instagram's API needs a Business/Creator account and token refresh every ~60 days.
 - The gallery is curated (only hand-picked pieces), so mirroring feeds would fight that anyway.
 
+## Bot Protection
+
+Goal: keep AI training scrapers away from the art. Search engines and humans are unaffected.
+
+| Layer | What | Where |
+|---|---|---|
+| robots.txt | `Disallow: /` for AI crawlers (GPTBot, ClaudeBot, CCBot, Google-Extended, Applebot-Extended, Bytespider, PerplexityBot, meta-externalagent, …). All other agents are allowed. | `app/robots.txt` |
+| Page signal | `noai, noimageai` robots meta tag | `metadata` in `app/layout.tsx` |
+| Image signal | `X-Robots-Tag: noai, noimageai` header on `/art/:path*` and `/_next/image` (the gallery uses `next/image`, so most image traffic goes through the optimizer route) | `headers()` in `next.config.ts` |
+| Hard block | Vercel Firewall → Bot Management → AI Bots → **Deny** | Vercel dashboard (manual, not in repo) |
+
+Decisions:
+
+- The hard block is the Vercel Firewall, not a `proxy.ts` user-agent denylist. A proxy runs a function on every request, images included. The Firewall works at the edge with no runtime cost, and Vercel maintains the bot list.
+- Search engines are not blocked (SEO and link previews stay intact).
+- No CAPTCHA/Turnstile. The site has no forms, API routes or auth to abuse.
+
+Limit: robots.txt and the noai signals are advisory. The Firewall catches bots that identify themselves. A scraper that spoofs a browser user-agent still gets through, and only a login wall would stop that.
+
 ## Testing
 
 - A small self-check for the frontmatter validator (the only non-trivial logic).
 - A self-check for slug derivation in the quick-add script.
+
+## Nice to Have
+
+- Static border on the main card: an animated SVG-noise ring around the card (a masked `::before` layer with stepped flicker), with no animation under `prefers-reduced-motion`.
+- Green accent: add a `--green` variable to the Talia theme (a mint such as `#a8e6cf`, or a cyan-leaning green such as `#5fd3a8`). Use it as an accent only (the static border, link hovers, glows), not as a main surface color, so the pink/red palette stays dominant. Don't rely on red vs. green alone to convey meaning; pair it with a brightness difference, an icon or an underline.
 
 ## Out of Scope
 
