@@ -9,7 +9,6 @@ export type ProfileLink = {
 
 export type Site = {
   name: string;
-  bio: string;
   avatar?: string; // path under public/, e.g. "/avatar.png"
   title: string;
   description: string;
