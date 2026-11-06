@@ -61,5 +61,5 @@ body {
 }
 
 :root[data-theme="talia"] body {
-  background: linear-gradient(to bottom, var(--background), var(--background-end)) fixed;
+  background: linear-gradient(to bottom, var(--background), var(--background-end)) fixed var(--background);
 }
