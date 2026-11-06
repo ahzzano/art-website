@@ -17,9 +17,6 @@ importers:
       '@next/mdx':
         specifier: ^16.4.5
         version: 16.4.5(@mdx-js/loader@3.1.1)(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.0))
-      '@types/mdx':
-        specifier: ^2.0.14
-        version: 2.0.14
       axios:
         specifier: ^1.21.0
         version: 1.21.0
@@ -39,6 +36,9 @@ importers:
       '@tailwindcss/turbopack':
         specifier: ^4
         version: 4.3.4
+      '@types/mdx':
+        specifier: ^2.0.14
+        version: 2.0.14
       '@types/node':
         specifier: ^20
         version: 20.19.43
