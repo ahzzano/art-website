@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ItemLink } from "@/components/item-link";
 import { links } from "@/content/links";
 import { site } from "@/content/site";
@@ -9,6 +10,16 @@ export default function Home() {
       <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-center py-16 px-6 sm:py-32 sm:px-16">
         <div className="bg-accent-soft p-6 rounded-xl text-gray-900 motion-safe:animate-fade-in shadow-2xl w-full sm:w-3/5">
             <div className="w-full flex flex-col gap-5">
+              {site.avatar && (
+                <Image
+                  src={site.avatar}
+                  alt={site.name}
+                  width={128}
+                  height={128}
+                  loading="eager"
+                  className="mx-auto -mt-24 size-32 rounded-full object-cover object-top shadow-lg motion-safe:animate-fade-in"
+                />
+              )}
               <h1 className="font-fredoka font-semibold text-3xl motion-safe:animate-fade-in motion-safe:[animation-delay:200ms]">{site.name}</h1>
               <div className="motion-safe:animate-fade-in motion-safe:[animation-delay:400ms]">
                 <Bio/>
